@@ -1,3 +1,4 @@
 Tela de Login Antiga com Banco de dados simples
+Projeto Visando aprender Tkinter
 Feita por Arthur Feitosa Rodrigues dos Santos
 Em breve versão recente focando em simplisidade e poo
