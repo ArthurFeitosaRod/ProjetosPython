@@ -1,0 +1,3 @@
+É um projeto antigo test sem POO
+Feita por Arthur Feitosa Rodrigues dos santos
+Versão recente em breve
