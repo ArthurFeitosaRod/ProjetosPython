@@ -1,3 +1,4 @@
+#Esse é um projeto criado no ano de 2024 sendo o primero projeto de calculadora sem POO
 from tkinter import *
 
 co = 'white'
@@ -231,5 +232,6 @@ for (texto, x, y, bg, ac) in botao_num:
     else:
         Button(root, text=texto, font="Bold 13", width=7, height=2, bd=False, bg=bg, activebackground=ac,
                command=lambda t=texto: handle_button_click(int(t))).place(x=x, y=y)
+
 
 root.mainloop()
