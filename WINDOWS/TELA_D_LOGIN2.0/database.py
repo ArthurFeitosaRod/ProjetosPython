@@ -14,10 +14,10 @@ class Funcs():
         """Verifica se uma tabela existe consultando sqlite_master."""
         self.conectar_db()
         
-        # Consulta a tabela mestra do SQLite
+        #consulta a tabela mestra do SQLite
         self.cursor.execute(f"SELECT name FROM sqlite_master WHERE type='table' AND name='{table_name}'")
         
-        # Se fetchone() retornar algo, a tabela existe
+        #se fetchone() retornar algo, a tabela existe
         existe = self.cursor.fetchone() is not None
         
         self.desconectar_db()
@@ -26,16 +26,15 @@ class Funcs():
         self.conn.close()
     def criar_tables(self):
         
-        # NOVO: Se a tabela já existe, não executa o restante do código
+        #se a tabela já existe, não executa o restante do código
         if self._tabela_existe('clientes'):
             print("Tabela 'clientes' já existe. Conexão e criação ignoradas.")
             return # Sai do método
             
-        # O código abaixo só será executado se a tabela 'clientes' *não* existir.
+        #o código abaixo só será executado se a tabela 'clientes' *não* existir.
         self.conectar_db(); print("Conectando ao Banco de Dados.....")
         
-        # Nota: Removi o "IF NOT EXISTS" do SQL, pois já fazemos a checagem em Python.
-        # CORREÇÃO: Adicionadas vírgulas entre as colunas e tipos de dados corrigidos
+        #removi o "IF NOT EXISTS" do SQL, pois já fazemos a checagem em Python.
         self.cursor.execute("""
             CREATE TABLE clientes (
                 cod INTEGER PRIMARY KEY, 
@@ -46,4 +45,5 @@ class Funcs():
         """)
         
         self.conn.commit(); print("Banco De Dados Criado!!")
+
         self.desconectar_db()
